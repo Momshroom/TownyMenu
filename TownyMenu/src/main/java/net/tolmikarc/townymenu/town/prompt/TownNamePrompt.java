@@ -45,7 +45,7 @@ public class TownNamePrompt extends SimplePrompt {
 
 	@Override
 	protected String getFailedValidationText(ConversationContext context, String invalidInput) {
-		return Localization.TownConversables.Name.INVALID;
+		return Localization.TownConversables.Name.INVALID.replace("{max_length}", TownySettings.getMaxNameLength());
 	}
 
 	@Override
