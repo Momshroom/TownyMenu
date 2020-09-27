@@ -396,15 +396,15 @@ Town_Conversables:
     Prompt: "&cAre you sure you would like to kick &b{player} &cfrom your town? Type &bconfirm &cor &4cancel &cnow:"
     Response: "&3Successfully kicked &b{player} &3from your town."
   Name:
-    Prompt: "&3Type in the name you would like to give to your town: (under 10 characters) &bCurrent Name: {town} &cType cancel to exit."
-    Invalid: "&cName must be unique and less than 10 characters."
+    Prompt: "&3Type in the name you would like to give to your town: (under {max_length} characters) &bCurrent Name: {town} &cType cancel to exit."
+    Invalid: "&cName must be unique and less than {max_length} characters."
     Response: "&3Successfully set town name to {input}"
     Return: "&cNot enough money in town bank to change town name."
   Rank:
     Remove: "remove"
     Prompt: "&3Type in the rank you would like to give to &b{player} &3now: &b(Options: {ranks}) &3Type &ccancel &3to cancel or &cremove &3to remove their rank."
     Invalid: "&cThis player either already has this rank or the rank does not exist. (Options: {ranks}) &cType &c&lcancel &cto cancel or remove to remove their ranks."
-    Response: "&aSuccessfully set {player}'s &arank to {input}"
+x
     Removed_All: "&cRemoved all ranks from resident {player}"
   Tax:
     Prompt: "&3Type in the amount you would like to set as a tax for your town: &c(Type cancel to exit prompt)"
