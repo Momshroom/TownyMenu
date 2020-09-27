@@ -30,7 +30,7 @@ public class TownNamePrompt extends SimplePrompt {
 
 	@Override
 	protected String getPrompt(ConversationContext ctx) {
-		return Localization.TownConversables.Name.PROMPT.replace("{town}", town.getName());
+		return Localization.TownConversables.Name.PROMPT.replace("{town}", town.getName()).replace("{max_length}", TownySettings.getMaxNameLength());
 	}
 
 	@Override
