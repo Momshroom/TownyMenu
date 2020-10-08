@@ -30,7 +30,7 @@ public class TownNamePrompt extends SimplePrompt {
 
 	@Override
 	protected String getPrompt(ConversationContext ctx) {
-		return Localization.TownConversables.Name.PROMPT.replace("{town}", town.getName());
+		return Localization.TownConversables.Name.PROMPT.replace("{town}", town.getName()).replace("{max_length}", TownySettings.getMaxNameLength());
 	}
 
 	@Override
@@ -40,12 +40,12 @@ public class TownNamePrompt extends SimplePrompt {
 		for (Town town : TownyAPI.getInstance().getDataSource().getTowns())
 			allTownNames.add(town.getName());
 		LagCatcher.end("load-all-town-names");
-		return ((input.length() < 10 && !allTownNames.contains(input)) || input.equalsIgnoreCase(Localization.CANCEL));
+		return ((input.length() < TownySettings.getMaxNameLength() && !allTownNames.contains(input)) || input.equalsIgnoreCase(Localization.CANCEL));
 	}
 
 	@Override
 	protected String getFailedValidationText(ConversationContext context, String invalidInput) {
-		return Localization.TownConversables.Name.INVALID;
+		return Localization.TownConversables.Name.INVALID.replace("{max_length}", TownySettings.getMaxNameLength());
 	}
 
 	@Override
